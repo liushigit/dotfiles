@@ -1,0 +1,42 @@
+call plug#begin('~/.vim/plugged')
+
+
+Plug 'junegunn/vim-easy-align'
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'tpope/vim-surround'
+
+Plug 'scrooloose/syntastic'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+
+"Plug 'Valloric/YouCompleteMe'
+
+call plug#end()
+
+" vim-javascript settings
+let g:javascript_plugin_flow = 1
+
+
+"enable keyboard shortcuts
+let g:tern_map_keys=1
+"show argument hints
+let g:tern_show_argument_hints='on_hold'
+
+"ctrl-P
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+" \v in regex means vertical tab
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
